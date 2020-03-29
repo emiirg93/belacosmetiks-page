@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Sen&display=swap" rel="stylesheet">
+</head>
+<style>
+  .page-footer {
+    width: 106.4%;
+    background-color: red;
+    left: -2.5rem;
+    top: 2rem;
+  }
+
+  .object-contain {
+    object-fit: contain;
+    object-position: top;
+  }
+
+  .object-cover {
+    object-fit: cover;
+
+  }
+</style>
+<script>
+  const handleMenu = () => {
+    document.querySelector('.menu_nav').classList.toggle('menu_open');
+    document.querySelector('.button_bgClose').classList.toggle('button_bgClose_active');
+  };
+
+  window.addEventListener('load', () => {
+    window.addEventListener('scroll', () => {
+      if (document.querySelector('.button_bgClose').classList.contains('button_bgClose_active')) {
+        handleMenu();
+      }
+    });
+  });
+  /*const changeDevice = () => {
+    const TAM_DESKTOP = 1024;
+    const tamaño = window.innerWidth ;
+    return tamaño < TAM_DESKTOP ? 'mobile' : 'desktop';
+  };
+
+  window.onresize = () => {
+    console.log(changeDevice());
+  }*/
+
+
+  const hola = () => {
+
+    var observer = new IntersectionObserver(hello, {
+      threshold: 0.7
+    });
+    observer.observe(document.querySelector('.card'));
+  };
+
+  const hello = (entries) => {
+    const entry = entries[0];
+    console.log(entry.intersectionRatio);
+    if (entry.intersectionRatio >= 0.7) {
+      console.log('se ve completo')
+    } else {
+      console.log('se dejo de ver completo')
+    }
+  }
+</script>
+
+<body>
+
+  <!-- <header class="fixed-top bg-white container-header d-none">
+    <div class='d-flex justify-content-between'>
+      <div class="ml-3">
+        <img src="../img/logo-chiquito.png" height="25rem" alt="">
+      </div>
+      <button type='button' class="w-5 h-100 mr-3" onclick='handleMenu();'>
+        <svg style="height: 0.75rem;width:0.75rem;fill: currentColor;" viewBox='0 0 20 20'
+          xmlns='http://www.w3.org/2000/svg'>
+          <title>Menu</title>
+          <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
+        </svg>
+      </button>
+    </div>
+    <nav class='menu_nav d-flex justify-content-end'>
+      <ul>
+        <li>
+          productos
+        </li>
+        <li>
+          catalogo
+        </li>
+        <li>
+          contactame
+        </li>
+        <li>
+          sobre mi
+        </li>
+      </ul>
+    </nav>
+
+  </header> -->
+
+  <header>
+    <nav class="bg-white fixed-top shadow-sm">
+      <div class="d-flex justify-content-between align-content-center p-2">
+        <div class="p-3">
+          <img src="../img/logo-completo.png" height="15rem" alt="">
+        </div>
+        <button type='button' class="mr-3 d-flex align-content-center" onclick='handleMenu();'>
+          <!-- <svg style="height: 1rem;width:1rem;fill: currentColor;" viewBox='0 0 20 20'
+            xmlns='http://www.w3.org/2000/svg'>
+            <title>Menu</title>
+            <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z' />
+          </svg> -->
+          <i class="fas fa-bars p-2" style="border: 1px solid rgba(0, 0, 0, 0.219); border-radius: 5px;"></i>
+        </button>
+      </div>
+      <div class='menu_nav d-flex justify-content-center text-center'>
+        <ul class="navegacion p-0">
+          <li>
+            Productos
+          </li>
+          <li>
+            Catalogo
+          </li>
+          <li>
+            Contactame
+          </li>
+          <li>
+            Sobre mi
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="button_bgClose boton-style-none" type='button' onclick="handleMenu();">
+
+  </div>
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="http://www.laboratoriolaca.com/content/bannerweb_catalogootoo.jpg" style="width:200%; height: 100%;"
+          class="object-contain" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://www.laboratoriolaca.com/content/banner_promo_12cuotas-03-2.jpg"
+          style="width:200%; height: 100%;" class="object-contain" alt="..."> </div>
+      <div class="carousel-item">
+        <img src="http://www.laboratoriolaca.com/content/laca-beauty.jpg" style="width:200%; height: 100%;"
+          class="object-contain" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <div class="w-100 px-2 main-container">
+    <div class="shadow mb-5 bg-white rounded bg-white p-1">
+      <div class="row text-center px-4">
+        <div class="col-12 pt-2 pb-2">
+          <h3>Productos</h3>
+        </div>
+        <div class="col-4">
+          <h6>Hogar</h6>
+          <img class="rounded-circle img-thumbnail object-contain"
+            src="https://belzia.com/wp-content/uploads/Espejo-maquillaje.jpg" style="width:100%;" alt="">
+        </div>
+        <div class="col-4">
+          <h6>Gabinete</h6>
+          <img class="rounded-circle img-thumbnail object-contain"
+            src="https://i.pinimg.com/originals/8c/40/48/8c40482258057312e7e48310b13a3798.webp" style="width:100%;"
+            alt="">
+        </div>
+        <div class="col-4">
+          <h6>Maquillaje</h6>
+          <img class="rounded-circle img-thumbnail object-contain"
+            src="data:image/jpeg;base64,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"
+            style="width:100%;" alt="">
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-12">
+          <hr>
+          <h3>Catalogo</h3>
+        </div>
+        <div class="col-12 px-4">
+          <div class="mt-2 mb-2">
+            <img src="http://www.laboratoriolaca.com/content/img_catalogo_otoo20.jpg" style="width:100%;" alt="">
+            <button class="btn btn-info btn-block btn-br-0">Descarga</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row px-4 pb-3">
+        <div class="col-12 text-center">
+          <hr>
+          <h3>Contactame</h3>
+        </div>
+        <div class="col-12">
+          <form action="#">
+            <div class="form-group">
+              <label for="">Nombre</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted">Ingrese su nombre</small>
+            </div>
+            <div class="form-group">
+              <label for="">Apellido</label>
+              <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted">Ingrese su Apellido</small>
+            </div>
+            <div class="form-group">
+              <label for="">Email</label>
+              <input type="text" name="" id="" class="form-control" placeholder="example@example.com"
+                aria-describedby="helpId">
+              <small id="helpId" class="text-muted">Ingrese su email</small>
+            </div>
+            <div class="form-group">
+              <label for="">Consulta</label>
+              <textarea name="" id="" cols="30" rows="5"
+                style="width: 100%;resize: none; border-radius: 5px;"></textarea>
+              <small id="helpId" class="text-muted">Ingrese su consulta</small>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+              <button type="reset" class="btn btn-secondary btn-sm ml-2">Limpiar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-12">
+          <hr>
+          <h3>Sobre Mi</h3>
+          <h6>Amanda Ravaschieri</h6>
+        </div>
+        <div class="col-6 p-4 d-flex flex-wrap align-content-center">
+          <img class="rounded-lg" src="../img/amanda.jpeg" style="width:100%;" alt="">
+        </div>
+        <div class="col-6 text-left pt-4 pr-4">
+          <small>Lorem smallsum dolor sit, amet consectetur adipisicing elit. Minima architecto et quidem, obcaecati
+            molestias rem illo earum libero beatae, ullam sint ratione nesciunt debitis reiciendis id aspernatur nihil
+            minus consectetur!</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer id="sticky-footer" class="pb-4 bg-grey text-black-50">
+      <div class="container text-center">
+        <div class="">
+          <i class="fab fa-facebook-f fa-lg"></i>
+          <i class="fab fa-instagram fa-lg"></i>
+          <i class="fab fa-whatsapp fa-lg"></i>
+        </div>
+        <small>Copyright 2020 &copy; Bela Cosmetik's</small><br>
+        <small>Emiliano Rago</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
