@@ -13,6 +13,12 @@ body{
     top: 18rem;
 }
 
+@media screen and (min-width: 1024px) {
+    .main-container {
+        top: 32rem;
+    }
+}
+
 .btn-br-0 {
     border-radius: 0px 0px 2px 2px;
 }
@@ -101,3 +107,8 @@ i:active{
 .navegacion li:hover{
     color: rgba(0, 0, 0, 0.301)
 }
+
+.carousel{
+    margin-top: 4.5rem;
+}
+
